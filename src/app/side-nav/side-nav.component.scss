@@ -1,0 +1,20 @@
+nav {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  max-width: 40rem;
+  background-color: var(--bg-light);
+  border-radius: 0 var(--rl) var(--rl) 0;
+  box-shadow: var(--shadow);
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content auto max-content;
+
+  color: white;
+  padding: 0.5rem;
+}
+
+.side-nav-header {
+  margin: 0;
+}
