@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TableComponent } from './table/table/table.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { ModalComponent } from './modal/modal.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'carousel',
     component: CarouselComponent,
+  },
+  {
+    path: 'modal',
+    component: ModalComponent,
   },
   {
     path: 'table',

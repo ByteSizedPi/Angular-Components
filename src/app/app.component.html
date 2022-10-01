@@ -1,13 +1,13 @@
 <side-nav>
-  <h2 side-nav-header class="center-text">Hello</h2>
+  <!-- <h2 side-nav-header class="center-text">Hello</h2> -->
   <h3>components</h3>
 
   <j-button [active]="activeTab === 0" routerLink="colorpicker">
     <icon btn-icon src="droplet"></icon>
     color picker
   </j-button>
-  <j-button [active]="activeTab === 1" routerLink="colorpicker">
-    <icon btn-icon src="droplet"></icon>
+  <j-button [active]="activeTab === 1" routerLink="modal">
+    <icon btn-icon src="x"></icon>
     modal
   </j-button>
   <j-button [active]="activeTab === 2" routerLink="carousel">
@@ -15,11 +15,6 @@
     carousel
   </j-button>
   <j-button [active]="activeTab === 3" routerLink="table">
-    <icon btn-icon src="table"></icon>
-    table
-  </j-button>
-  <h3>components</h3>
-  <j-button [active]="activeTab === 4" routerLink="table">
     <icon btn-icon src="table"></icon>
     table
   </j-button>

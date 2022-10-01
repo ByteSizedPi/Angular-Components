@@ -15,7 +15,7 @@ export class ColorPickerComponent implements AfterViewInit {
   @ViewChild('preview') preview: ElementRef;
   @ViewChild('section') section: ElementRef;
   @ViewChild('content') content: ElementRef;
-  @ViewChild('Close') Close: ElementRef;
+  @ViewChild('controls') controls: ElementRef;
 
   @ViewChild('red') red: ElementRef<HTMLInputElement>;
   @ViewChild('green') green: ElementRef<HTMLInputElement>;
@@ -97,15 +97,22 @@ export class ColorPickerComponent implements AfterViewInit {
       'cp-preview 0.1s forwards ease-out';
     setTimeout(() => {
       this.preview.nativeElement.style.color = this.getTextColor();
-      this.Close.nativeElement.style.display = 'block';
+      this.controls.nativeElement.style.display = 'block';
+      // this.Copy.nativeElement.style.display = 'block';
     }, 100);
+  }
+
+  async copy() {
+    await navigator.clipboard.writeText(this.rgbString);
   }
 
   close() {
     setTimeout(() => {
       this.expanded = false;
       this.preview.nativeElement.style.color = this.getTextColor();
-      this.Close.nativeElement.style.display = 'none';
+      this.controls.nativeElement.style.display = 'none';
+      // this.Close.nativeElement.style.display = 'none';
+      // this.Copy.nativeElement.style.display = 'none';
       setTimeout(() => {
         this.section.nativeElement.style.animation =
           'cp-1 0.1s forwards ease-out';

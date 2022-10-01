@@ -10,7 +10,7 @@ import { filter, map } from 'rxjs';
 export class AppComponent {
   activeTab: number = 0;
   curUrl: string = '';
-  paths: string[] = ['colorpicker', 'carousel', 'table'];
+  paths: string[] = ['colorpicker', 'modal', 'carousel', 'table'];
 
   constructor(private router: Router) {
     this.router.events
