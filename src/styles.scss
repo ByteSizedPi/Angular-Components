@@ -2,9 +2,16 @@
   --rs: 5px;
   --rm: 8px;
   --rl: 10px;
-  --bg: #303030;
-  --bg-light: #424242;
+  --bg: hsl(215, 42%, 9%);
+  --bg-1: hsl(215, 30%, 15%);
+  --bg-2: hsl(215, 28%, 20%);
+  --bg-3: hsl(215, 24%, 24%);
+  --off-white: rgb(150, 150, 150);
   --shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+* {
+  font-family: "Montserrat";
 }
 
 h1,
@@ -13,11 +20,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0.5rem;
+  margin: 0.25rem 0.5rem;
 }
 
 body {
   margin: 0;
+  height: 100vh;
 }
 
 .column {

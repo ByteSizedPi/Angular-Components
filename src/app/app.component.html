@@ -1,15 +1,24 @@
-<section>
-  <side-nav>
-    <h2 side-nav-header class="center-text">Hello</h2>
+<side-nav>
+  <h2 side-nav-header class="center-text">Hello</h2>
+  <h3>components</h3>
 
-    <button side-nav-content>carousel</button>
-    <button side-nav-content>carousel</button>
-    <button side-nav-content>carousel</button>
-    <button side-nav-content>carousel</button>
+  <j-button [active]="activeTab === 0" routerLink="carousel">
+    <icon btn-icon src="columns"></icon>
+    carousel
+  </j-button>
+  <j-button [active]="activeTab === 1" routerLink="table">
+    <icon btn-icon src="table"></icon>
+    table
+  </j-button>
+  <h3>components</h3>
+  <j-button [active]="activeTab === 3" routerLink="table">
+    <icon btn-icon src="table"></icon>
+    table
+  </j-button>
 
-    <h2 footer>Footer</h2>
-  </side-nav>
-  <div>
+  <h3 side-nav-footer class="center-text">Footer</h3>
+
+  <section content>
     <router-outlet></router-outlet>
-  </div>
-</section>
+  </section>
+</side-nav>

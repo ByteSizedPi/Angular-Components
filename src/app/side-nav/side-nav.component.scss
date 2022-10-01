@@ -3,7 +3,8 @@ nav {
   height: 100%;
   width: 100%;
   max-width: 40rem;
-  background-color: var(--bg-light);
+  min-width: 12rem;
+  background-color: var(--bg-1);
   border-radius: 0 var(--rl) var(--rl) 0;
   box-shadow: var(--shadow);
 
@@ -12,9 +13,12 @@ nav {
   grid-template-rows: max-content auto max-content;
 
   color: white;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
-.side-nav-header {
-  margin: 0;
+.side-nav-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: max-content auto;
+  background-color: var(--bg);
 }

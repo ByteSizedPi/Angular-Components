@@ -1,9 +1,6 @@
-section {
-  height: 100vh;
-  width: 100vw;
-
-  display: grid;
-  grid-template-columns: 15rem auto;
-
-  background-color: var(--bg);
+h3 {
+  margin: 1.5rem 0.5rem 0.25rem 0.75rem;
+  color: var(--off-white);
+  font-weight: 600;
+  font-size: 1.1rem;
 }

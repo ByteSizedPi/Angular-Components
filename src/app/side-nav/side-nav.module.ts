@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideNavComponent } from './side-nav.component';
 
+const exports = [SideNavComponent];
+
 @NgModule({
-  declarations: [SideNavComponent],
+  declarations: exports,
   imports: [CommonModule],
-  exports: [SideNavComponent],
+  exports: exports,
 })
 export class SideNavModule {}
