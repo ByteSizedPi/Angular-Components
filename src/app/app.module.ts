@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from './button/button.module';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IconModule } from './icons/icon.module';
 
 @NgModule({
@@ -19,6 +20,8 @@ import { IconModule } from './icons/icon.module';
     ButtonModule,
     CommonModule,
     IconModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

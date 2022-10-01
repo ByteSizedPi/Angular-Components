@@ -8,15 +8,19 @@ import { filter, map } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'My Components';
   activeTab: number = 0;
-  paths: string[] = ['carousel', 'table'];
+  curUrl: string = '';
+  paths: string[] = ['colorpicker', 'carousel', 'table'];
+
   constructor(private router: Router) {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
         map(({ url }: any) => url.split('/').at(-1))
       )
-      .subscribe((url) => (this.activeTab = this.paths.indexOf(url)));
+      .subscribe((url) => {
+        this.curUrl = url;
+        this.activeTab = this.paths.indexOf(url);
+      });
   }
 }

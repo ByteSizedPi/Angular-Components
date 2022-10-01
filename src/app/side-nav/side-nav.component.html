@@ -1,10 +1,15 @@
 <div class="side-nav-container">
   <nav>
-    <ng-content select="[side-nav-header]"></ng-content>
-    <div class="column">
+    <div class="side-nav-header">
+      <ng-content select="[side-nav-header]"></ng-content>
+    </div>
+    <div class="side-nav-content column">
       <ng-content></ng-content>
     </div>
-    <ng-content select="[side-nav-footer]"></ng-content>
+    <div class="side-nav-footer">
+      <ng-content select="[side-nav-footer]"></ng-content>
+    </div>
   </nav>
+
   <ng-content select="[content]"></ng-content>
 </div>

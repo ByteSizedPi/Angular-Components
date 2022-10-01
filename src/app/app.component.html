@@ -2,23 +2,34 @@
   <h2 side-nav-header class="center-text">Hello</h2>
   <h3>components</h3>
 
-  <j-button [active]="activeTab === 0" routerLink="carousel">
+  <j-button [active]="activeTab === 0" routerLink="colorpicker">
+    <icon btn-icon src="droplet"></icon>
+    color picker
+  </j-button>
+  <j-button [active]="activeTab === 1" routerLink="colorpicker">
+    <icon btn-icon src="droplet"></icon>
+    modal
+  </j-button>
+  <j-button [active]="activeTab === 2" routerLink="carousel">
     <icon btn-icon src="columns"></icon>
     carousel
   </j-button>
-  <j-button [active]="activeTab === 1" routerLink="table">
-    <icon btn-icon src="table"></icon>
-    table
-  </j-button>
-  <h3>components</h3>
   <j-button [active]="activeTab === 3" routerLink="table">
     <icon btn-icon src="table"></icon>
     table
   </j-button>
+  <h3>components</h3>
+  <j-button [active]="activeTab === 4" routerLink="table">
+    <icon btn-icon src="table"></icon>
+    table
+  </j-button>
 
-  <h3 side-nav-footer class="center-text">Footer</h3>
+  <h4 side-nav-footer class="center h-100">Footer</h4>
 
   <section content>
+    <h1>
+      Example of: <span>{{ curUrl | titlecase }}</span>
+    </h1>
     <router-outlet></router-outlet>
   </section>
 </side-nav>

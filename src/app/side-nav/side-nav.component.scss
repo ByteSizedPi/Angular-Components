@@ -1,19 +1,19 @@
 nav {
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
   max-width: 40rem;
   min-width: 12rem;
   background-color: var(--bg-1);
   border-radius: 0 var(--rl) var(--rl) 0;
   box-shadow: var(--shadow);
+  padding-top: 28px;
 
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: max-content auto max-content;
+  grid-template-rows: max-content auto 40px;
 
   color: white;
-  padding: 0.25rem;
+  overflow: hidden;
+  // padding: 0.25rem;
 }
 
 .side-nav-container {
@@ -21,4 +21,13 @@ nav {
   display: grid;
   grid-template-columns: max-content auto;
   background-color: var(--bg);
+}
+
+.side-nav-content {
+  padding: 6px;
+}
+
+.side-nav-footer {
+  background-color: var(--bg-3);
+  overflow: hidden;
 }

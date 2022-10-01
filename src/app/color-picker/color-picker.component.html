@@ -1,0 +1,48 @@
+<div class="color-picker-container">
+  <section class="column center" (click)="show()" #section>
+    <img
+      #Close
+      src="../../assets/Icons/x.svg"
+      class="close"
+      (click)="close()"
+    />
+    <button class="preview w-100 center" #preview (click)="updateFormat(true)">
+      {{ rgbString }}
+    </button>
+    <div class="content" #content>
+      <div class="row center-vertical input">
+        <input
+          type="range"
+          class="red"
+          min="0"
+          max="255"
+          #red
+          [value]="rgb[0]"
+          (input)="setVal(0, $event.target)"
+        />
+      </div>
+      <div class="row center-vertical input">
+        <input
+          type="range"
+          class="green"
+          min="0"
+          max="255"
+          #green
+          [value]="rgb[1]"
+          (input)="setVal(1, $event.target)"
+        />
+      </div>
+      <div class="row center-vertical input">
+        <input
+          type="range"
+          class="blue"
+          min="0"
+          max="255"
+          #blue
+          [value]="rgb[2]"
+          (input)="setVal(2, $event.target)"
+        />
+      </div>
+    </div>
+  </section>
+</div>
