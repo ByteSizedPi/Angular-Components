@@ -2,12 +2,14 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 
 @Component({
-  selector: 'app-color-picker',
+  selector: 'color-picker',
   templateUrl: './color-picker.component.html',
   styleUrls: ['./color-picker.component.scss'],
 })
@@ -20,10 +22,17 @@ export class ColorPickerComponent implements AfterViewInit {
   @ViewChild('red') red: ElementRef<HTMLInputElement>;
   @ViewChild('green') green: ElementRef<HTMLInputElement>;
   @ViewChild('blue') blue: ElementRef<HTMLInputElement>;
+
+  @Output() change: EventEmitter<string> = new EventEmitter();
+  @Output() opened: EventEmitter<boolean> = new EventEmitter();
+  @Output() closed: EventEmitter<boolean> = new EventEmitter();
+  @Output() copied: EventEmitter<string> = new EventEmitter();
+
   rgb: number[] = [0, 0, 0];
   format: boolean = true;
   rgbString: string = '';
   expanded: boolean = false;
+
   constructor() {}
 
   ngAfterViewInit(): void {
@@ -56,9 +65,9 @@ export class ColorPickerComponent implements AfterViewInit {
   };
 
   updateFormat(inc: boolean = false) {
-    // if (!this.expanded) return;
     if (inc && this.expanded) this.format = !this.format;
     this.rgbString = this.format ? this.toRGB() : this.toHex();
+    this.change.emit(this.rgbString);
   }
 
   gradient(start: string, end: string) {
@@ -89,6 +98,7 @@ export class ColorPickerComponent implements AfterViewInit {
 
   show() {
     if (this.expanded) return;
+    this.opened.emit(true);
     this.expanded = true;
     this.section.nativeElement.style.animation = 'cp 0.1s forwards ease-out';
     this.content.nativeElement.style.animation =
@@ -98,21 +108,20 @@ export class ColorPickerComponent implements AfterViewInit {
     setTimeout(() => {
       this.preview.nativeElement.style.color = this.getTextColor();
       this.controls.nativeElement.style.display = 'block';
-      // this.Copy.nativeElement.style.display = 'block';
     }, 100);
   }
 
   async copy() {
     await navigator.clipboard.writeText(this.rgbString);
+    this.copied.emit();
   }
 
   close() {
     setTimeout(() => {
+      this.closed.emit(true);
       this.expanded = false;
       this.preview.nativeElement.style.color = this.getTextColor();
       this.controls.nativeElement.style.display = 'none';
-      // this.Close.nativeElement.style.display = 'none';
-      // this.Copy.nativeElement.style.display = 'none';
       setTimeout(() => {
         this.section.nativeElement.style.animation =
           'cp-1 0.1s forwards ease-out';

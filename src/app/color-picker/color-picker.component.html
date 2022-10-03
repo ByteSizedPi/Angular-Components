@@ -4,20 +4,9 @@
       <button class="preview center" #preview (click)="updateFormat(true)">
         {{ rgbString }}
       </button>
-      <div class="column controls" #controls>
-        <j-button></j-button>
-        <img
-          #Close
-          src="../../assets/Icons/x.svg"
-          class="close"
-          (click)="close()"
-        />
-        <img
-          #Copy
-          src="../../assets/Icons/copy.svg"
-          class="copy"
-          (click)="copy()"
-        />
+      <div class="column controls space-between" #controls>
+        <button icon-btn="x" (click)="close()"></button>
+        <button icon-btn="copy" (click)="copy()" class="copy"></button>
       </div>
     </div>
     <div class="content" #content>

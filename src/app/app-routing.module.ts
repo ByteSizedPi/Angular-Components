@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TableComponent } from './table/table/table.component';
-import { ColorPickerComponent } from './color-picker/color-picker.component';
-import { ModalComponent } from './modal/modal.component';
+import { ColorPickerViewComponent } from './views/color-picker-view/color-picker-view.component';
+import { ModalViewComponent } from './views/modal-view/modal-view.component';
 
 const routes: Routes = [
   {
     path: 'colorpicker',
-    component: ColorPickerComponent,
+    component: ColorPickerViewComponent,
   },
   {
     path: 'carousel',
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'modal',
-    component: ModalComponent,
+    component: ModalViewComponent,
   },
   {
     path: 'table',

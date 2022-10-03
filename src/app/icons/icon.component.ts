@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styles: [
     `
       img {
+        min-height: 1rem;
+        min-width: 1rem;
         display: block;
         margin-right: 0.5rem;
       }

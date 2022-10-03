@@ -2,22 +2,30 @@
   <!-- <h2 side-nav-header class="center-text">Hello</h2> -->
   <h3>components</h3>
 
-  <j-button [active]="activeTab === 0" routerLink="colorpicker">
-    <icon btn-icon src="droplet"></icon>
+  <!-- [active]="activeTab === 0" -->
+  <!-- <icon btn-icon src="droplet"></icon> -->
+  <button
+    button
+    routerLink="colorpicker"
+    icon="droplet"
+    [active]="activeTab === 0"
+  >
     color picker
-  </j-button>
-  <j-button [active]="activeTab === 1" routerLink="modal">
-    <icon btn-icon src="x"></icon>
+  </button>
+  <button button routerLink="modal" [active]="activeTab === 1" icon="x">
     modal
-  </j-button>
-  <j-button [active]="activeTab === 2" routerLink="carousel">
-    <icon btn-icon src="columns"></icon>
+  </button>
+  <button
+    button
+    routerLink="carousel"
+    [active]="activeTab === 2"
+    icon="columns"
+  >
     carousel
-  </j-button>
-  <j-button [active]="activeTab === 3" routerLink="table">
-    <icon btn-icon src="table"></icon>
+  </button>
+  <button button routerLink="table" [active]="activeTab === 3" icon="table">
     table
-  </j-button>
+  </button>
 
   <h4 side-nav-footer class="center h-100">Footer</h4>
 

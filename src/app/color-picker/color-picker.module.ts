@@ -8,7 +8,13 @@ import { ButtonModule } from '../button/button.module';
 const exports = [ColorPickerComponent];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, ButtonModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    IconModule,
+  ],
   declarations: [ColorPickerComponent],
   exports: exports,
   bootstrap: [ColorPickerComponent],

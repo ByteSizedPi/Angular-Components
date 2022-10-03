@@ -40,27 +40,12 @@ span {
   color: white;
 }
 
-.controls {
-  display: none;
+.copy {
+  margin-top: 0.5rem !important;
 }
 
-.close,
-.copy {
-  cursor: pointer;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 4px;
-  padding: 0.25rem;
-  z-index: 2;
-  transition: background-color 0.1s;
-
-  &:hover {
-    background-color: var(--bg-3);
-  }
-
-  &:active {
-    background-color: var(--bg-2);
-  }
+.controls {
+  display: none;
 }
 
 .content {
@@ -114,6 +99,7 @@ span {
   border: none;
   color: #00000000;
   transition: color 0.1s;
+  padding: 0;
 
   &:active {
     transform: scale(0.95);
@@ -123,12 +109,12 @@ span {
     from {
       height: 1.5rem;
       width: 3rem;
-      padding-top: 0;
+      // padding-top: 0;
     }
     to {
       height: 4.5rem;
       width: 100%;
-      padding-top: 0.5rem;
+      // padding-top: 0.5rem;
     }
   }
 
