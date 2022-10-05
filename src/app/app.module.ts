@@ -14,9 +14,16 @@ import { ModalModule } from './modal/modal.module';
 
 import { ColorPickerViewComponent } from './views/color-picker-view/color-picker-view.component';
 import { ModalViewComponent } from './views/modal-view/modal-view.component';
+import { TableViewComponent } from './views/table-view/table-view.component';
+import { TableModule } from './table/table.module';
 
 @NgModule({
-  declarations: [AppComponent, ColorPickerViewComponent, ModalViewComponent],
+  declarations: [
+    AppComponent,
+    ColorPickerViewComponent,
+    ModalViewComponent,
+    TableViewComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +36,7 @@ import { ModalViewComponent } from './views/modal-view/modal-view.component';
     ReactiveFormsModule,
     ColorPickerModule,
     ModalModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

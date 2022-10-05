@@ -1,29 +1,19 @@
 <side-nav>
-  <!-- <h2 side-nav-header class="center-text">Hello</h2> -->
   <h3>components</h3>
-
-  <!-- [active]="activeTab === 0" -->
-  <!-- <icon btn-icon src="droplet"></icon> -->
-  <button
-    button
-    routerLink="colorpicker"
-    icon="droplet"
-    [active]="activeTab === 0"
-  >
+  <button button routerLink="colorpicker" [active]="activeTab === 0">
+    <icon src="droplet"></icon>
     color picker
   </button>
-  <button button routerLink="modal" [active]="activeTab === 1" icon="x">
+  <button button routerLink="modal" [active]="activeTab === 1">
+    <icon src="square"></icon>
     modal
   </button>
-  <button
-    button
-    routerLink="carousel"
-    [active]="activeTab === 2"
-    icon="columns"
-  >
+  <button button routerLink="carousel" [active]="activeTab === 2">
+    <icon src="columns"></icon>
     carousel
   </button>
-  <button button routerLink="table" [active]="activeTab === 3" icon="table">
+  <button button routerLink="table" [active]="activeTab === 3">
+    <icon src="table"></icon>
     table
   </button>
 

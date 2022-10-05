@@ -3,5 +3,12 @@
   #bg
   (click)="closeModal($event.target)"
 >
-  <section class="modal-content" #modal>Hello</section>
+  <section class="content-container" #modal>
+    <div class="modal-content">
+      <div class="modal-x column end" (click)="closeModal()">
+        <icon src="x"></icon>
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </section>
 </section>

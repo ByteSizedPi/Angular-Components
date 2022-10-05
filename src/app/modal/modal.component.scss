@@ -11,16 +11,38 @@
   overflow: hidden;
 }
 
-.modal-content {
+.content-container {
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 4rem 0 1rem 0;
   opacity: 0;
   transform: translateY(50rem);
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  width: 50rem;
-  min-height: 100rem;
+}
+
+.modal-content {
+  min-width: 20rem;
   border-radius: var(--rl);
   background-color: var(--bg-3);
-  padding: 0.5rem;
+  padding: 1.5rem;
+  color: white;
+}
+
+.modal-x {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.25rem;
+  border-radius: 1.5rem;
+  transition: background-color 0.1s;
+  position: absolute;
+  right: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-1);
+  }
 }
 
 @keyframes fade-in {

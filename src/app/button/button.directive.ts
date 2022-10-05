@@ -13,7 +13,6 @@ import {
 })
 export class ButtonDirective implements OnInit, OnChanges {
   hover: boolean = false;
-  @Input('icon') icon: string;
   @Input('active') active: boolean = false;
   s: CSSStyleDeclaration;
 
@@ -32,17 +31,10 @@ export class ButtonDirective implements OnInit, OnChanges {
     this.s.color = 'white';
     this.s.cursor = 'pointer';
     this.s.fontSize = '1rem';
-    // this.s.width = 'calc(100% - 0.5rem)';
     this.el.nativeElement.classList.add('row', 'center-vertical');
-
-    if (this.icon) {
-      let inner = this.el.nativeElement.innerHTML;
-      let margin = inner ? '0.5rem' : '0';
-      this.el.nativeElement.innerHTML =
-        `<img src='../../assets/Icons/${this.icon}.svg' style="margin-right: ${margin}"/>` +
-        inner;
-    }
+    this.s.columnGap = '0.5rem';
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (this.hover) {
       this.s.backgroundColor = 'var(--bg-3)';

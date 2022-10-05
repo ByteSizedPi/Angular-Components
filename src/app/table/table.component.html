@@ -1,0 +1,24 @@
+<section *ngIf="table">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let item of table.columns">
+          {{ item.title }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of table.data; index as i">
+        <td
+          *ngFor="let col of row | keyvalue; index as j"
+          [ngClass]="
+            table.columns[j].classList ? table.columns[j].classList : ''
+          "
+        >
+          {{ getFormat(table.columns[j].format, col.value) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section *ngIf="!table">OHNO</section>
