@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
-import { Table, toCurrency, UserTable } from '../../table/Table';
-
-interface User {
-  username: string;
-  password: string;
-  age: number;
-}
+import { User, UserData } from 'src/app/table/tempData';
+import { Table } from '../../table/Table';
 
 @Component({
   selector: 'app-table-view',
@@ -14,104 +9,35 @@ interface User {
   styleUrls: ['./table-view.component.scss'],
 })
 export class TableViewComponent implements OnInit {
-  // table: UserTable;
-  asyncTable: Observable<UserTable>;
+  asyncTable?: Observable<Table<User>>;
+  table?: Table<User>;
 
   constructor() {
-    let table: UserTable = new UserTable([
-      {
-        username: 'Johan',
-        password: 'johan',
-        age: 22,
-      },
-      {
-        username: 'Pieter',
-        password: 'Pieter',
-        age: 20,
-      },
-      {
-        username: 's',
-        password: 's',
-        age: 22,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-      {
-        username: 'hackerman',
-        password: 'hackerman05',
-        age: 50,
-      },
-    ]);
+    let table: Table<User> = new Table<User>(
+      UserData,
+      // new Array<User>(500).fill(UserData[0]),
+      [
+        {
+          key: 'username',
+          justify: 'CENTER',
+          align: 'LEFT',
+        },
+        {
+          key: 'password',
+          justify: 'CENTER',
+          // align: 'CENTER',
+        },
+        {
+          key: 'age',
+          formatOptions: ['currency'],
+          classList: ['green'],
+          justify: 'RIGHT',
+          // align: 'RIGHT',
+        },
+      ]
+    );
 
-    this.asyncTable = of(table).pipe(delay(1000));
+    this.asyncTable = of(table).pipe(delay(10));
   }
 
   ngOnInit(): void {}

@@ -1,24 +1,17 @@
-<section *ngIf="table">
-  <table>
-    <thead>
-      <tr>
-        <th *ngFor="let item of table.columns">
-          {{ item.title }}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of table.data; index as i">
-        <td
-          *ngFor="let col of row | keyvalue; index as j"
-          [ngClass]="
-            table.columns[j].classList ? table.columns[j].classList : ''
-          "
-        >
-          {{ getFormat(table.columns[j].format, col.value) }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<section *ngIf="table" #Table (load)="exists(1)">
+  <div *ngFor="let column of table.columns" class="column">
+    <div class="column-title">{{ column.title }}</div>
+    <div class="column body">
+      <div
+        *ngFor="let row of table.data"
+        class="cell-container"
+        [ngClass]="column.classList"
+      >
+        <div class="cell-content">
+          {{ format(column.formats, row[column.key]) }}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section *ngIf="!table">OHNO</section>

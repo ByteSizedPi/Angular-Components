@@ -1,54 +1,70 @@
-table {
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: var(--bg-1);
-  display: block;
-  width: 100%;
-  max-height: 100%;
-  height: 100%;
-  border-spacing: 0;
   overflow: hidden;
   border-radius: 10px;
+  margin: 0.5rem;
 
-  thead {
-    width: 100%;
-    display: block;
-    tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 100%;
-    }
+  .column {
+    display: flex;
+    flex-direction: column;
   }
 
-  tbody {
-    width: 100%;
-    overflow: auto;
-    max-height: 100%;
-    display: block;
-    tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 100%;
-    }
+  .body {
+    margin: 0.5rem;
   }
 
-  th {
+  .column-title {
     background-color: var(--bg-3);
     padding: 0.5rem;
     font-weight: 400;
+    text-align: center;
   }
 
-  td {
-    border-bottom: 1px solid var(--bg-3);
-    padding: 0.5rem;
+  .cell-container {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 0.5rem);
+    padding: 0.25rem;
+    // width: 6rem;
+  }
+
+  .cell-content {
+    background-color: red;
   }
 }
 
-section {
-  // display: block;
-  background-color: var(--bg-2);
-  border-radius: 10px;
-  max-width: calc(100% - 1rem);
-  max-height: calc(100% - 1rem);
-  height: calc(100% - 1rem);
-  overflow: hidden;
-  margin: 0.5rem;
+.table-justify-center {
+  justify-content: center;
 }
+
+.table-justify-right {
+  justify-content: flex-end;
+}
+
+.table-justify-left {
+  justify-content: flex-start;
+}
+
+.table-align-center div {
+  align-items: center;
+}
+
+.table-align-left div {
+  align-items: flex-start;
+}
+
+.table-align-right div {
+  align-items: flex-end;
+}
+
+// .green {
+//   color: rgb(5, 255, 5);
+// }
+
+// .cell-content {
+//   // display:
+//   // background-color: red;
+//   // width: max-content;
+// }

@@ -16,6 +16,7 @@ import { ColorPickerViewComponent } from './views/color-picker-view/color-picker
 import { ModalViewComponent } from './views/modal-view/modal-view.component';
 import { TableViewComponent } from './views/table-view/table-view.component';
 import { TableModule } from './table/table.module';
+import { DirectivesModule } from './shared/directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TableModule } from './table/table.module';
     FormsModule,
     ReactiveFormsModule,
     ColorPickerModule,
+    DirectivesModule,
     ModalModule,
     TableModule,
   ],
